@@ -479,7 +479,6 @@ ul, ol, dd {
 }
 
 .grommet input:not(.grommetux-input),
-.grommet input:not(.grommetux-check-box__input),
 .grommet select,
 .grommet textarea {
   font-size: 16px;
@@ -496,7 +495,6 @@ ul, ol, dd {
 }
 
 .grommet input:not(.grommetux-input):focus,
-.grommet input:not(.grommetux-check-box__input):focus,
 .grommet select:focus,
 .grommet textarea:focus {
   border-width: 2px;
@@ -505,7 +503,6 @@ ul, ol, dd {
 }
 
 .grommet input:not(.grommetux-input)::-moz-focus-inner,
-.grommet input:not(.grommetux-check-box__input)::-moz-focus-inner,
 .grommet select::-moz-focus-inner,
 .grommet textarea::-moz-focus-inner {
   border: none;
@@ -513,28 +510,24 @@ ul, ol, dd {
 }
 
 .grommet input:not(.grommetux-input)::-webkit-input-placeholder,
-.grommet input:not(.grommetux-check-box__input)::-webkit-input-placeholder,
 .grommet select::-webkit-input-placeholder,
 .grommet textarea::-webkit-input-placeholder {
   color: #aaa;
 }
 
 .grommet input:not(.grommetux-input)::-moz-placeholder,
-.grommet input:not(.grommetux-check-box__input)::-moz-placeholder,
 .grommet select::-moz-placeholder,
 .grommet textarea::-moz-placeholder {
   color: #aaa;
 }
 
 .grommet input:not(.grommetux-input):-ms-input-placeholder,
-.grommet input:not(.grommetux-check-box__input):-ms-input-placeholder,
 .grommet select:-ms-input-placeholder,
 .grommet textarea:-ms-input-placeholder {
   color: #aaa;
 }
 
 .grommet input:not(.grommetux-input).error,
-.grommet input:not(.grommetux-check-box__input).error,
 .grommet select.error,
 .grommet textarea.error {
   border-color: #CA3748;
@@ -2281,10 +2274,6 @@ html.rtl .grommetux-anchor--primary .grommetux-control-icon, html.rtl
   justify-content: space-between;
 }
 
-.grommetux-box--justify-around {
-  justify-content: space-around;
-}
-
 .grommetux-box--justify-end {
   justify-content: flex-end;
 }
@@ -3779,7 +3768,6 @@ _::-webkit-:not(:root:root),
   padding: 6px 0;
   height: 36px;
   cursor: col-resize;
-  outline: none;
 }
 
 .grommetux-background-color-index--dark .grommetux-chart-range__start, .grommetux-background-color-index--light .grommetux-background-color-index--dark .grommetux-chart-range__start, .grommetux-background-color-index--dark
@@ -3840,12 +3828,6 @@ _::-webkit-:not(:root:root),
   left: -26px;
 }
 
-.grommetux-chart-range__start--focus,
-.grommetux-chart-range__end--focus {
-  border-color: #98a0a7;
-  box-shadow: 0 0 1px 1px #98a0a7;
-}
-
 .grommetux-chart-range--vertical {
   flex-direction: column;
 }
@@ -3870,8 +3852,6 @@ _::-webkit-:not(:root:root),
 
 .grommetux-chart-range--vertical .grommetux-chart-range__start,
 .grommetux-chart-range--vertical .grommetux-chart-range__end {
-  top: auto;
-  transform: none;
   padding: 0 6px;
   height: 26px;
   cursor: row-resize;
@@ -4692,8 +4672,7 @@ html.rtl .grommetux-check-box {
 
 .grommetux-check-box__input {
   opacity: 0;
-  width: 0;
-  height: 0;
+  position: absolute;
 }
 
 .grommetux-check-box__input:checked + .grommetux-check-box__control {
@@ -6020,10 +5999,6 @@ html.rtl .grommetux-check-box--reverse .grommetux-check-box__control {
   outline: none;
 }
 
-.grommetux-distribution__item-box {
-  transition: all 0.2s ease;
-}
-
 .grommetux-distribution__item-box.grommetux-color-index-unset {
   fill: #ddd;
 }
@@ -6212,13 +6187,11 @@ html.rtl .grommetux-check-box--reverse .grommetux-check-box__control {
 
 .grommetux-distribution__label {
   position: absolute;
-  background-color: transparent;
   padding: 6px 12px;
   font-family: "Montserrat", sans-serif;
   overflow: hidden;
   text-align: left;
   pointer-events: none;
-  transition: all 0.2s ease;
 }
 
 .grommetux-distribution__label.grommetux-background-color-index-brand {
@@ -6907,7 +6880,6 @@ html.rtl .grommetux-check-box--reverse .grommetux-check-box__control {
   text-decoration: none;
 }
 
-.grommetux-form-field__contents > input:not([type]),
 .grommetux-form-field__contents > input[type=text],
 .grommetux-form-field__contents > input[type=range],
 .grommetux-form-field__contents > input[type=email],
@@ -6921,7 +6893,6 @@ html.rtl .grommetux-check-box--reverse .grommetux-check-box__control {
 .grommetux-form-field__contents > .grommetux-date-time input,
 .grommetux-form-field__contents > .grommetux-text-input,
 .grommetux-form-field__contents > .grommetux-select input,
-.grommetux-form-field__contents > .grommetux-password-input input,
 .grommetux-form-field__contents > textarea {
   display: block;
   width: 100%;
@@ -6933,9 +6904,7 @@ html.rtl .grommetux-check-box--reverse .grommetux-check-box__control {
   padding-left: 22px;
 }
 
-.grommetux-background-color-index--dark .grommetux-form-field__contents > input:not([type]), .grommetux-background-color-index--light .grommetux-background-color-index--dark .grommetux-form-field__contents > input:not([type]), .grommetux-background-color-index--dark
-.grommetux-form-field__contents > input[type=text], .grommetux-background-color-index--light .grommetux-background-color-index--dark
-.grommetux-form-field__contents > input[type=text], .grommetux-background-color-index--dark
+.grommetux-background-color-index--dark .grommetux-form-field__contents > input[type=text], .grommetux-background-color-index--light .grommetux-background-color-index--dark .grommetux-form-field__contents > input[type=text], .grommetux-background-color-index--dark
 .grommetux-form-field__contents > input[type=range], .grommetux-background-color-index--light .grommetux-background-color-index--dark
 .grommetux-form-field__contents > input[type=range], .grommetux-background-color-index--dark
 .grommetux-form-field__contents > input[type=email], .grommetux-background-color-index--light .grommetux-background-color-index--dark
@@ -6960,16 +6929,12 @@ html.rtl .grommetux-check-box--reverse .grommetux-check-box__control {
 .grommetux-form-field__contents > .grommetux-text-input, .grommetux-background-color-index--dark
 .grommetux-form-field__contents > .grommetux-select input, .grommetux-background-color-index--light .grommetux-background-color-index--dark
 .grommetux-form-field__contents > .grommetux-select input, .grommetux-background-color-index--dark
-.grommetux-form-field__contents > .grommetux-password-input input, .grommetux-background-color-index--light .grommetux-background-color-index--dark
-.grommetux-form-field__contents > .grommetux-password-input input, .grommetux-background-color-index--dark
 .grommetux-form-field__contents > textarea, .grommetux-background-color-index--light .grommetux-background-color-index--dark
 .grommetux-form-field__contents > textarea {
   color: #fff;
 }
 
-.grommetux-background-color-index--light .grommetux-form-field__contents > input:not([type]), .grommetux-background-color-index--dark .grommetux-background-color-index--light .grommetux-form-field__contents > input:not([type]), .grommetux-background-color-index--light
-.grommetux-form-field__contents > input[type=text], .grommetux-background-color-index--dark .grommetux-background-color-index--light
-.grommetux-form-field__contents > input[type=text], .grommetux-background-color-index--light
+.grommetux-background-color-index--light .grommetux-form-field__contents > input[type=text], .grommetux-background-color-index--dark .grommetux-background-color-index--light .grommetux-form-field__contents > input[type=text], .grommetux-background-color-index--light
 .grommetux-form-field__contents > input[type=range], .grommetux-background-color-index--dark .grommetux-background-color-index--light
 .grommetux-form-field__contents > input[type=range], .grommetux-background-color-index--light
 .grommetux-form-field__contents > input[type=email], .grommetux-background-color-index--dark .grommetux-background-color-index--light
@@ -6994,8 +6959,6 @@ html.rtl .grommetux-check-box--reverse .grommetux-check-box__control {
 .grommetux-form-field__contents > .grommetux-text-input, .grommetux-background-color-index--light
 .grommetux-form-field__contents > .grommetux-select input, .grommetux-background-color-index--dark .grommetux-background-color-index--light
 .grommetux-form-field__contents > .grommetux-select input, .grommetux-background-color-index--light
-.grommetux-form-field__contents > .grommetux-password-input input, .grommetux-background-color-index--dark .grommetux-background-color-index--light
-.grommetux-form-field__contents > .grommetux-password-input input, .grommetux-background-color-index--light
 .grommetux-form-field__contents > textarea, .grommetux-background-color-index--dark .grommetux-background-color-index--light
 .grommetux-form-field__contents > textarea {
   color: #172029;
@@ -7004,12 +6967,10 @@ html.rtl .grommetux-check-box--reverse .grommetux-check-box__control {
 .grommetux-form-field__contents > .grommetux-search-input input,
 .grommetux-form-field__contents > .grommetux-calendar input,
 .grommetux-form-field__contents > .grommetux-date-time input,
-.grommetux-form-field__contents > .grommetux-select input,
-.grommetux-form-field__contents > .grommetux-password-input input {
+.grommetux-form-field__contents > .grommetux-select input {
   padding-left: 24px;
 }
 
-.grommetux-form-field__contents > input:not([type]),
 .grommetux-form-field__contents > input[type=text],
 .grommetux-form-field__contents > input[type=email],
 .grommetux-form-field__contents > input[type=password],
@@ -7021,7 +6982,6 @@ html.rtl .grommetux-check-box--reverse .grommetux-check-box__control {
   padding: 0 24px;
 }
 
-.grommetux-form-field__contents > input:not([type]):focus,
 .grommetux-form-field__contents > input[type=text]:focus,
 .grommetux-form-field__contents > input[type=email]:focus,
 .grommetux-form-field__contents > input[type=password]:focus,
@@ -7033,7 +6993,6 @@ html.rtl .grommetux-check-box--reverse .grommetux-check-box__control {
   padding: 0 24px;
 }
 
-.grommetux-form-field__contents > input:not([type]),
 .grommetux-form-field__contents > input[type=text],
 .grommetux-form-field__contents > input[type=range],
 .grommetux-form-field__contents > input[type=email],
@@ -7046,13 +7005,11 @@ html.rtl .grommetux-check-box--reverse .grommetux-check-box__control {
 .grommetux-form-field__contents > .grommetux-calendar input,
 .grommetux-form-field__contents > .grommetux-date-time input,
 .grommetux-form-field__contents > .grommetux-text-input,
-.grommetux-form-field__contents > .grommetux-select input,
-.grommetux-form-field__contents > .grommetux-password-input input {
+.grommetux-form-field__contents > .grommetux-select input {
   height: 36px;
 }
 
 @media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {
-  .grommetux-form-field__contents > input:not([type]),
   .grommetux-form-field__contents > input[type=text],
   .grommetux-form-field__contents > input[type=range],
   .grommetux-form-field__contents > input[type=email],
@@ -7065,8 +7022,7 @@ html.rtl .grommetux-check-box--reverse .grommetux-check-box__control {
   .grommetux-form-field__contents > .grommetux-calendar input,
   .grommetux-form-field__contents > .grommetux-date-time input,
   .grommetux-form-field__contents > .grommetux-text-input,
-  .grommetux-form-field__contents > .grommetux-select input,
-  .grommetux-form-field__contents > .grommetux-password-input input {
+  .grommetux-form-field__contents > .grommetux-select input {
     line-height: normal;
   }
 }
@@ -7353,13 +7309,11 @@ html.rtl .grommetux-form-field__error {
   font-size: 24px;
 }
 
-.grommetux-form-field--size-large input:not([type]),
 .grommetux-form-field--size-large input[type="text"] {
   font-size: 24px;
   height: auto;
 }
 
-.grommetux-form-field--strong input:not([type]),
 .grommetux-form-field--strong input[type="text"] {
   font-weight: 700;
 }
@@ -11576,63 +11530,6 @@ html.rtl .grommetux-paragraph--align-end {
   }
 }
 
-.grommetux-password-input {
-  position: relative;
-  cursor: pointer;
-  overflow: hidden;
-}
-
-.grommetux-password-input__input {
-  padding: 11px 23px;
-  border: 1px solid #CCCCCC;
-  border-radius: 4px;
-  outline: none;
-  background-color: transparent;
-  color: inherit;
-  font: inherit;
-  margin: 0;
-  width: 100%;
-  padding-right: 60px;
-}
-
-.grommetux-password-input__input:focus {
-  border-width: 2px;
-  border-color: #98a0a7;
-  padding: 10px 22px;
-}
-
-.grommetux-password-input__input::-moz-focus-inner {
-  border: none;
-  outline: none;
-}
-
-.grommetux-password-input__input::-webkit-input-placeholder {
-  color: #aaa;
-}
-
-.grommetux-password-input__input::-moz-placeholder {
-  color: #aaa;
-}
-
-.grommetux-password-input__input:-ms-input-placeholder {
-  color: #aaa;
-}
-
-.grommetux-password-input__input.error {
-  border-color: #CA3748;
-}
-
-.grommetux-password-input__input:focus {
-  padding-right: 58px;
-}
-
-.grommetux-password-input__control {
-  position: absolute;
-  top: 50%;
-  transform: translateY(-50%);
-  right: 6px;
-}
-
 @keyframes scale-up-fade-out {
   0% {
     -webkit-transform: scale(1);
@@ -12384,10 +12281,6 @@ section:not(.grommetux-section):first-of-type {
   top: 50%;
   transform: translateY(-50%);
   right: 6px;
-}
-
-.grommetux-select__control svg {
-  background-color: #F5F7F9;
 }
 
 .grommetux-select__search {
@@ -14539,17 +14432,6 @@ html.rtl .grommetux-value--align-end {
   width: 100%;
 }
 
-.grommetux-world-map__container {
-  position: relative;
-  width: 100%;
-}
-
-.grommetux-world-map__flag {
-  position: absolute;
-  top: 0px;
-  left: 0px;
-}
-
 .grommetux-world-map__continent,
 .grommetux-world-map__place {
   stroke-linecap: round;
@@ -14741,8 +14623,7 @@ html.rtl .grommetux-value--align-end {
   }
 }
 
-.cco-ui-alert-container .cco-ui-alert-status-critical .grommetux-toast,
-.cco-ui-alert-container .cco-ui-alert-status-error .grommetux-toast {
+.cco-ui-alert-container .cco-ui-alert-status-critical .grommetux-toast {
   background: #CA3748;
   border: 1px solid #B02C3B;
 }
@@ -14757,8 +14638,7 @@ html.rtl .grommetux-value--align-end {
   border: 1px solid #035D79;
 }
 
-.cco-ui-alert-container .cco-ui-alert-status-ok .grommetux-toast,
-.cco-ui-alert-container .cco-ui-alert-status-success .grommetux-toast {
+.cco-ui-alert-container .cco-ui-alert-status-ok .grommetux-toast {
   background: #4B771F;
   border: 1px solid #436E17;
 }
@@ -14936,6 +14816,7 @@ html.rtl .grommetux-value--align-end {
   border-radius: 3px;
   border: 1px solid #CCCCCC;
   width: 100%;
+  height: 100%;
   flex-grow: 1;
   box-shadow: 0 1px 4px 0 #CCCCCC;
 }
@@ -14970,12 +14851,8 @@ html.rtl .grommetux-value--align-end {
 }
 
 .grommetux-card.cco-ui-card-with-buttons .cco-ui-card-footer .grommetux-button:hover {
-  box-shadow: none !important;
+  box-shadow: none;
   filter: brightness(65%);
-}
-
-.grommetux-card.cco-ui-card-with-buttons .cco-ui-card-footer .grommetux-button:not(.grommetux-button--plain) {
-  padding: 6px;
 }
 
 .grommetux-card.cco-ui-card-with-buttons .cco-ui-card-footer .grommetux-button__icon {
@@ -15032,24 +14909,6 @@ html.rtl .grommetux-value--align-end {
 
 .cco-ui-carousel-side-hints .grommetux-carousel {
   overflow: visible;
-}
-
-[draggable="true"]:not(.cco-ui-invisible) {
-  cursor: move;
-}
-
-.cco-ui-draggable-transition {
-  transition: all 250ms ease-in-out;
-}
-
-.cco-ui-draggable-dragging {
-  background: black;
-  opacity: 0.1;
-  color: transparent !important;
-}
-
-.cco-ui-draggable-dragging * {
-  opacity: 0;
 }
 
 .cco-ui-tinymce .mce-flow-layout-item {
@@ -15141,44 +15000,6 @@ form[disabled] {
 .cco-ui-image-border {
   border: 4px solid white;
   box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.5);
-}
-
-.cco-ui-loading-indicator svg {
-  overflow: visible;
-}
-
-.cco-ui-loading-indicator svg:nth-child(1) {
-  -webkit-animation: "cco-ui-loading-indicator-animation" 1000ms;
-  animation: "cco-ui-loading-indicator-animation" 1000ms;
-  animation-iteration-count: infinite;
-  animation-timing-function: ease-in-out;
-  animation-delay: 0ms;
-}
-
-.cco-ui-loading-indicator svg:nth-child(2) {
-  -webkit-animation: "cco-ui-loading-indicator-animation" 1000ms;
-  animation: "cco-ui-loading-indicator-animation" 1000ms;
-  animation-iteration-count: infinite;
-  animation-timing-function: ease-in-out;
-  animation-delay: 125ms;
-}
-
-.cco-ui-loading-indicator svg:nth-child(3) {
-  -webkit-animation: "cco-ui-loading-indicator-animation" 1000ms;
-  animation: "cco-ui-loading-indicator-animation" 1000ms;
-  animation-iteration-count: infinite;
-  animation-timing-function: ease-in-out;
-  animation-delay: 250ms;
-}
-
-@keyframes cco-ui-loading-indicator-animation {
-  0%, 100% {
-    transform: scale(1);
-  }
-  50% {
-    transform: scale(0.75);
-    opacity: 0.5;
-  }
 }
 
 .grommetux-label--uppercase {
